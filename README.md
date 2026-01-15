@@ -1,4 +1,6 @@
-# bashlink
-A utility to combine a bash script that sources other script files into a single executable file
+# blink 🔗
+A small utility that bundles a Bash script and all of its sourced files into a single, self‑contained executable.
 
-Note: This utility has no dedicated unit or integration tests since it came about organically as a way to easily distribute my bash scripts. However, I do have plans to add tests in the future.
+`blink` makes it easy to distribute Bash projects that rely on multiple script files by collapsing them into one portable artifact. No more juggling `source` calls or worrying about missing dependencies.
+
+> **Note:** This tool grew organically as a convenience for packaging my own scripts, so it currently has no dedicated unit or integration tests. I do plan to introduce proper test coverage in the future as the project evolves.
