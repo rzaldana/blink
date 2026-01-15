@@ -124,9 +124,18 @@ build() {
     local library_abs_path
     local library_name
 
+
     library_relative_path="$( echo "$library" | awk '{print $2}')"
     library_abs_path="$(get_abs_path "$library_relative_path" "$src_script_abs_dirname")"
     library_name="$(basename "$library_abs_path")"
+
+    # Check if source is ignored
+    local line_before_source
+    line_before_source="$(grep -B1 "$library" "$src_script_abs_path" | head -n1 )" #TODO: Handle case where source is the first line in file
+    if [[ "$line_before_source" == '# blink disable' ]]; then
+      echo "Library '$library_name' marked with disable tag. Ignoring..."
+      continue 
+    fi
     
     echo "Linking $library_abs_path"
 
