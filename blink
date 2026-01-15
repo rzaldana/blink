@@ -7,6 +7,7 @@ error_exit() {
   exit 1
 }
 
+
 # Outputs the absolute path pointed to 
 # by the provided absolute path.
 # Only works for files. Will error out if the
