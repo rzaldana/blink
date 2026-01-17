@@ -41,3 +41,7 @@ source ./path/to/library.bash
 ```
 
 The script will detect this tag and skip embedding that library.
+
+# Known issues
+- There is a bug where if one of the `source` commands is the first line of the file, the contents of the sourced library will be injected but the original contents of the file will be deleted.
+- `source` statements must be alone on their line
